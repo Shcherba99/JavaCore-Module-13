@@ -164,6 +164,8 @@ public class JsonApiClient {
         List<Object> comments = readObjectsFromJson(responseComment.body(), new TypeReference<>() {
         });
 
+        System.out.println("JSON comments from last post by userId: " + id + ": ");
+
         comments.forEach(System.out::println);
 
         String filePath = "src/main/resources/";

@@ -9,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 @AllArgsConstructor
-public class HttpService {
+public class JsonHttpService {
 
     private final HttpClient httpClient;
 

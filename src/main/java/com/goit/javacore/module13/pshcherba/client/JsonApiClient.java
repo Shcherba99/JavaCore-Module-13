@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class JsonApiClient {
     private final ObjectMapper objectMapper;
-    private final HttpService httpService;
+    private final JsonHttpService httpService;
 
     public void createNewUser(String strUri, User user) {
         String json = readObjectToStringJson(user);

@@ -1,7 +1,7 @@
 package com.goit.javacore.module13.pshcherba.management;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.goit.javacore.module13.pshcherba.client.HttpService;
+import com.goit.javacore.module13.pshcherba.client.JsonHttpService;
 import com.goit.javacore.module13.pshcherba.client.JsonApiClient;
 import com.goit.javacore.module13.pshcherba.entity.User;
 
@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         ObjectMapper objectMapper = new ObjectMapper();
         HttpClient httpClient = HttpClient.newHttpClient();
-        HttpService httpService= new HttpService(httpClient);
+        JsonHttpService httpService= new JsonHttpService(httpClient);
         JsonApiClient jsonApiClient = new JsonApiClient(objectMapper, httpService);
 
 
@@ -25,7 +25,6 @@ public class Main {
 
         //Update user
         User userUpdate = User.createTestUser();
-        userUpdate.setName("NewNameTest");
         jsonApiClient.updateUserById(STR_USERS_URI, 3, userUpdate);
 
         //Delete user
